@@ -1,0 +1,18 @@
+.header
+  = link_to "/", class:"header__logo" do
+    GOAL
+  .menu
+    .menu__nickname
+      = @nickname
+      の投稿
+
+.contents
+  .filter
+    .players
+      - @players.each do |player|
+        .player
+          = link_to player_path(player) do
+            = image_tag player.image, class:"player__photo"
+          .player__name
+            = player.name
+

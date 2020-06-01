@@ -1,0 +1,386 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #222222;
+  display: flex;
+
+
+  &__logo {
+    width: 150px;
+    height: 70px;
+    font-size: 40px;
+    text-decoration: none;
+    color: white;
+    line-height: 70px;
+    font-family: 'arial black';
+    margin-left: 40px;
+  }
+}
+
+.menu {
+  width: 300px;
+  height: 70px;
+  font-size: 18px;
+  position: absolute;
+  right: 200px;
+
+  
+
+  &__mypage {
+    width: 100px;
+    height: 70px;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    line-height: 70px;
+    font-weight: bold;
+    opacity: 0.5;
+  }
+
+  &__mypage:hover {
+    opacity: 1;
+  }
+
+  &__rogin {
+    width: 100px;
+    height: 70px;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    line-height: 70px;
+    font-weight: bold;
+    opacity: 0.5;
+  }
+  
+  &__rogin:hover {
+    opacity: 1;
+  }
+
+  &__post {
+    width: 100px;
+    height: 70px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    line-height: 70px;
+    opacity: 0.5;
+  }
+
+  &__post:hover {
+    opacity: 1;
+  }
+
+  //詳細ページ
+  &__nickname {
+    width: 300px;
+    height: 70px;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    font-weight: bold;
+
+  }
+}
+
+.contents {
+  width: 100%;
+  height: 100vh;
+  background-image: url("sibahu.jpeg");
+  background-size: contain;
+  overflow: scroll;
+}
+  
+.filter {
+  height: 100%;
+  background: rgba(255,255,255,0.6);
+  overflow: scroll;
+}
+
+.serch {
+  height: 70px;
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+
+
+  &__input {
+    height: 41px;
+    width: 500px;
+    margin-left: 20px;
+
+
+    &__text {
+      width: 300px;
+      padding: 5px;
+    }
+
+    &__submit {
+      width: 100px;
+      margin-left: 20px;
+      display: inline-block;
+      background-color: #333;
+      border: 2px solid #333;
+      color: #fff;
+      line-height: 50px;
+      border-radius: 10px;
+    }
+
+  }
+}
+.serch__input__submit:hover {
+  background-color: #fff;
+  border-color: #222;
+  color: #222;
+}
+
+.players {
+  width: 100%;
+  height: 100%;
+  padding: 30px 100px 0px; 
+  display: flex;
+  justify-content: space-between;;
+  flex-wrap: wrap;
+}
+
+.player {
+  width: 300px;
+  height: 450px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+  color: #fff;
+  display: inline-block;
+  margin: 0 0 1em;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-family: 'Noto Sans JP', sans-serif;
+
+  &__photo {
+    width: 300px;
+    height: 400px;
+  }
+  
+  &__name {
+    text-decoration: none;
+    color: #222222;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    width: 300px;
+    height: 50px;
+  }
+}
+
+.player:hover {
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(-1em);
+}
+
+.player img {
+  border-radius: 30px;
+}
+
+// 新規登録
+
+input {
+  font-size: 18px;
+  display: inline-block;
+}
+
+//　詳細画面
+
+.content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.photo {
+  width: 400px;
+  height: 600px;
+  margin: 30px 0 0 100px;
+}
+
+.details {
+  width: 400px;
+  margin: 30px 0 0 50px;
+  font-size: 24px;
+  height: 180px;
+}
+
+.detail {
+
+  &__nickname {
+
+    &__link {
+      text-decoration: none;
+      color: #222222;
+    }
+  }
+}
+
+.btn {
+  display: flex;
+  width: 300px;
+  height: 80px;
+  text-align: center;
+  font-size: 3.0em;
+  line-height: 80px;
+  margin-top: 60px;
+  
+
+  &__edit {
+    width: 150px;
+    height: 80px;
+    color: #222222;
+  }
+
+  &__delete {
+    width: 150px;
+    height: 80px;
+    color: #222222;
+  }
+}
+
+.comment {
+  width: 700px;
+  height: 400px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-image: url("sibahu.jpeg");
+  box-shadow: 3px 3px 6px -2px #555,
+  3px 3px 8px rgba(255,255,255,0.8) inset;
+  background: rgba(255,255,255,0.3);
+
+  &__form {
+    width: 700px;
+    height: 150px;
+    
+    .new_comment {
+      width: 700px;
+      height: 150px;
+      text-align: center;
+      position: relative;
+    }
+
+    &__text {
+      width: 80%;
+      margin-top: 30px;
+    }
+
+    &__btn {
+      position: absolute;
+      bottom: 20px;
+      right: 325px;
+    }
+  }
+
+  &__date {
+    height: 250px;
+    overflow: scroll;
+
+    &__group {
+      width: 700px;
+      height: 30px;
+      display: flex;
+
+      &__name {
+        display: block;
+        width: 100px;
+        height: 30px; 
+        text-align: center;
+        font-weight: bold;       
+      }
+
+      &__colon {
+        display: block;
+        height: 30px;
+        width: 20px;
+      }
+
+      &__text {
+        width: 580px;
+        height: 30px;
+        display: block;
+      }
+    }
+  }
+
+  &__alart {
+    font-size: 26px;
+    font-weight: bold;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 70px;
+  }
+
+  &__btn {
+    height: 50px;
+    display: flex;
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+  
+
+    &__rogin {
+      width: 150px;
+      height: 50px;
+      background-color: #333;
+      border: 2px solid #333;
+      color: #fff;
+      line-height: 46px;
+      text-decoration: none;
+      margin-left: 180px;
+      border-radius: 10px;
+    }
+
+    &__rogin:hover {
+      background-color: #fff;
+      border-color: #222;
+      color: #222;
+    }
+
+    &__new {
+      width: 150px;
+      height: 50px;
+      background-color: #333;
+      border: 2px solid #333;
+      color: #fff;
+      line-height: 46px;
+      text-decoration: none;
+      margin-left: 40px;
+      border-radius: 10px;
+    }
+
+    &__new:hover {
+      background-color: #fff;
+      border-color: #222;
+      color: #222;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

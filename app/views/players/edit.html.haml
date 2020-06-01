@@ -1,0 +1,15 @@
+.header
+  = link_to "/", class:"header__logo" do
+    GOAL
+
+.contents
+  .filter
+    .form 
+      = form_for [@player] do |f|
+        = f.text_field :image, class: "form__image", placeholder: "画像のurl"
+        = f.text_field :name, class: "form__name", placeholder: "選手名"
+        = f.text_field :country, class: "form__country", placeholder: "国"
+        = f.text_field :position, class: "form__position", placeholder: "ポジション"
+        = f.text_field :age, class: "form__age", placeholder: "年齢"
+        = f.submit "編集する", class: "form__btn"
+　　　　　　

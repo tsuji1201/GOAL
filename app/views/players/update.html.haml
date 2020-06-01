@@ -1,0 +1,11 @@
+.header
+  = link_to "/", class:"header__logo" do
+    GOAL
+
+.contents
+  .filter
+    .back
+      = link_to root_path, class: "back__btn" do
+        トップページへ戻る
+      = link_to user_path(current_user.id), class: "back__mypage" do
+        マイページへ戻る 

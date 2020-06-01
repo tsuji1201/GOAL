@@ -1,0 +1,57 @@
+.header
+  = link_to "/", class:"header__logo" do
+    GOAL
+
+.contents
+  .filter
+    .content
+      .photo
+        = image_tag "#{@player.image}", height: "600", width: "400"
+      .details
+        .dedail__name
+          選手名：
+          = @player.name
+        .detail__country
+          国：
+          = @player.country
+        .detail__position
+          ポジション：
+          = @player.position
+        .detail__age
+          年齢：
+          = @player.age
+        .detail__nickname
+          投稿者：
+          = link_to user_path(@player.user.id), class:"detail__nickname__link" do
+            = @player.user.nickname
+      - if user_signed_in? && current_user.id == @player.user_id        
+        .btn
+          = link_to "/players/#{@player.id}/edit", class: "btn__edit" do
+            = icon('fas', 'fas fa-futbol')
+          = link_to "/players/#{@player.id}", method: :delete, class: "btn__delete" do
+            = icon('fas', 'fas fa-user-times')
+      
+      - if user_signed_in?
+        .comment
+          .comment__form
+            = form_for [@player, @comment] do |f|
+              = f.text_area :text, class: "comment__form__text", placeholder: "コメントする"
+              = f.submit 'SEND', class: "comment__form__btn"
+          .comment__date
+            - @comments. each do |comment|
+              .comment__date__group
+                %span.comment__date__group__name
+                  = comment.user.nickname
+                %span.comment__date__group__colon：
+                %span.comment__date__group__text
+                  = comment.text
+      - else 
+        .comment
+          %p.comment__alart
+            コメントするにはログインまたは新規登録しよう！
+          .comment__btn
+            = link_to new_user_session_path, class:"comment__btn__rogin" do
+              ログインする
+            = link_to new_user_registration_path, class:"comment__btn__new" do
+              新規登録する
+                          

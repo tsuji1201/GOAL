@@ -1,0 +1,30 @@
+.header
+  = link_to "/", class:"header__logo" do
+    GOAL
+  .menu
+    - if user_signed_in?
+      = link_to user_path(current_user.id), class:"menu__mypage" do
+        = current_user.nickname
+      = link_to destroy_user_session_path, method: :delete ,class:"menu__rogin" do
+        ログアウト
+      = link_to new_player_path, class:"menu__post" do
+        投稿する
+    - else 
+      = link_to new_user_session_path, class:"menu__rogin" do
+        ログイン
+      = link_to new_user_registration_path, class:"menu__post" do
+        新規登録 
+
+.contents
+  .filter
+    .serch
+      = form_with url: "/players/search", method: :get, local: true, class: "serch__input" do |form|
+        = form.text_field :keyword, placeholder: "投稿を検索する", class: "serch__input__text"
+        = form.submit "検索する", class: "serch__input__submit"
+    .players
+      - @players.each do |player|
+        .player
+          = link_to player_path(player) do
+            = image_tag player.image, class:"player__photo"
+          .player__name
+            = player.name
