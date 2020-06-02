@@ -49,9 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: soccer_production
-  username: soccer
-  password: <%= ENV['SOCCER_DATABASE_PASSWORD'] %>
+  # database: soccer_production
+  # username: soccer
+  # password: <%= ENV['SOCCER_DATABASE_PASSWORD'] %>
   adapter: postgresql
   encoding: unicode
-  pool: 5
+  pool: 10
