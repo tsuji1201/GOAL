@@ -34,7 +34,7 @@
       - if user_signed_in?
         .comment
           .comment__form
-            = form_for [@player, @comment] do |f|
+            = form_with(model: [@player, @comment], local: true, id: "new_comment") do |f|
               = f.text_area :text, class: "comment__form__text", placeholder: "コメントする"
               = f.submit 'SEND', class: "comment__form__btn"
           .comment__date

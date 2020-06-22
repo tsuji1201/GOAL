@@ -22,7 +22,7 @@ class PlayersController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
+    @comment = Comment.new()
     @comments = @player.comments.includes(:user)
   end
 
@@ -51,5 +51,6 @@ class PlayersController < ApplicationController
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
+
 
 end

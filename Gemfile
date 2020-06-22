@@ -66,6 +66,8 @@ gem "haml-rails", ">= 1.0", '<=2.0.1'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'devise'
 gem 'kaminari'
+gem 'jquery-rails'  
+gem 'pry-rails'
 
 group :production do
   gem 'pg'

@@ -1,8 +1,11 @@
 class CommentsController < ApplicationController
 
   def create
-    comment = Comment.create(comment_params)
-    redirect_to "/players/#{comment.player.id}" 
+    @comment = Comment.create(comment_params)
+    respond_to do |format|
+      format.html { redirect_to "/players/#{@comment.player_id}"  }
+      format.json
+    end
   end
 
   def show
@@ -13,4 +16,5 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:text).merge(user_id: current_user.id, player_id: params[:player_id])
   end
 
+  
 end
