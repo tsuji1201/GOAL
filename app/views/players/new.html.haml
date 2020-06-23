@@ -4,11 +4,24 @@
 
 .contents
   .filter
-    .form 
-      = form_for [@player] do |f|
-        = f.text_field :image, class: "form__image", placeholder: "画像のurl"
-        = f.text_field :name, class: "form__name", placeholder: "選手名"
-        = f.text_field :country, class: "form__country", placeholder: "国"
-        = f.text_field :position, class: "form__position", placeholder: "ポジション"
-        = f.text_field :age, class: "form__age", placeholder: "年齢"
-        = f.submit "登録する", class: "form__btn"
+    .wrapper
+      .form 
+        %h2.form__title 最強の選手を登録しよう！！
+        = form_for [@player] do |f|
+          .form__group 
+            画像の選択
+            = f.file_field :image, class: "form__group__field", placeholder: "画像のurl"
+          .form__group  
+            選手名
+            = f.text_field :name, class: "form__group__field", placeholder: "選手名"
+          .form__group    
+            出身国
+            = f.text_field :country, class: "form__group__field", placeholder: "国"
+          .form__group    
+            ポジション
+            = f.text_field :position, class: "form__group__field", placeholder: "ポジション"
+          .form__group  
+            年齢
+            = f.text_field :age, class: "form__group__field", placeholder: "年齢"
+          .form__submit
+            = f.submit "登録する", class: "form__submit__btn"
