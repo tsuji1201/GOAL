@@ -1,19 +1,5 @@
-.header
-  = link_to "/", class:"header__logo" do
-    GOAL
-  .menu
-    - if user_signed_in?
-      = link_to user_path(current_user.id), class:"menu__mypage" do
-        = current_user.nickname
-      = link_to destroy_user_session_path, method: :delete ,class:"menu__rogin" do
-        ログアウト
-      = link_to new_player_path, class:"menu__post" do
-        投稿する
-    - else 
-      = link_to new_user_session_path, class:"menu__rogin" do
-        ログイン
-      = link_to new_user_registration_path, class:"menu__post" do
-        新規登録           
+= render partial: "players/header"
+
 .contents
   .filter
     .serch

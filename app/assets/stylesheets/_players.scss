@@ -9,6 +9,7 @@
   height: 70px;
   background-color: #222222;
   display: flex;
+  justify-content: space-between;
 
 
   &__logo {
@@ -24,72 +25,29 @@
 }
 
 .menu {
-  width: 300px;
+  color: white;
   height: 70px;
-  font-size: 18px;
-  position: absolute;
-  right: 200px;
-
-  
-
-  &__mypage {
-    width: 100px;
-    height: 70px;
-    display: inline-block;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    line-height: 70px;
-    font-weight: bold;
-    opacity: 0.5;
-  }
-
-  &__mypage:hover {
-    opacity: 1;
-  }
-
-  &__rogin {
-    width: 100px;
-    height: 70px;
-    display: inline-block;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    line-height: 70px;
-    font-weight: bold;
-    opacity: 0.5;
-  }
-  
-  &__rogin:hover {
-    opacity: 1;
-  }
-
-  &__post {
-    width: 100px;
-    height: 70px;
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    line-height: 70px;
-    opacity: 0.5;
-  }
-
-  &__post:hover {
-    opacity: 1;
-  }
-
-  //詳細ページ
-  &__nickname {
-    width: 300px;
-    height: 70px;
-    display: inline-block;
-    color: white;
-    text-align: center;
-    line-height: 70px;
-    font-weight: bold;
-
+  width: 120px;
+  font-size: 20px;
+  margin-right: 100px;
+  text-align: center;
+  line-height: 70px;
+  cursor: pointer;
+  position: relative;
+  &__pull{
+    font-size: 14px;
+    background-color: #222;
+    display: none;
+    height: 50px;
+    line-height: 50px;
+    &__text {
+      text-decoration: none;
+      color: white;
+      opacity: 0.5;
+    }
+    &__text:hover {
+      opacity: 1.0;
+    }  
   }
 }
 

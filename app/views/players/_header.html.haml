@@ -1,0 +1,22 @@
+.header  
+  = link_to root_path, class:"header__logo" do
+    GOAL
+  %ul.menu 
+    メニュー
+    - if user_signed_in?
+      %li.menu__pull 
+        = link_to new_player_path ,class:"menu__pull__text" do
+          投稿する
+      %li.menu__pull
+        =  link_to destroy_user_session_path, method: :delete ,class:"menu__pull__text"do
+          ログアウト
+      %li.menu__pull
+        = link_to user_path(current_user.id) ,class:"menu__pull__text"do
+          マイページ    
+    - else 
+      %li.menu__pull
+        = link_to new_user_session_path, class:"menu__pull__text" do
+          ログイン
+      %li.menu__pull
+        = link_to new_user_registration_path, class:"menu__pull__text" do
+          新規登録
