@@ -13,11 +13,12 @@
             = image_tag player.image.to_s, class:"player__photo"
           .player__name
             = player.name
-            - if current_user.already_favorited?(player) 
-              = link_to player_favorites_path(player), method: :delete, class:"player__favorite" do
-                = icon('fas', 'fas fa-heart')
-            - else 
-              = link_to player_favorites_path(player), method: :post, class:"player__favorite" do
-                = icon('far', 'far fa-heart')
-            = player.favorites.count 
+            - if user_signed_in?
+              - if current_user.already_favorited?(player) 
+                = link_to player_favorites_path(player), method: :delete, class:"player__favorite" do
+                  = icon('fas', 'fas fa-heart')
+              - else 
+                = link_to player_favorites_path(player), method: :post, class:"player__favorite" do
+                  = icon('far', 'far fa-heart')
+              = player.favorites.count 
     = paginate(@players)
