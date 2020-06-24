@@ -1,6 +1,7 @@
 class Player < ApplicationRecord
   validates :image, :name, :country, :position, :age, presence: true
   belongs_to :user
+  has_many :favorites, dependent: :destroy
   has_many :comments
 
   mount_uploader :image, ImageUploader
