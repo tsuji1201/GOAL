@@ -21,4 +21,5 @@
                 = link_to player_favorites_path(player), method: :post, class:"player__favorite" do
                   = icon('far', 'far fa-heart')
               = player.favorites.count 
-    = paginate(@players)
+    .paginate          
+      = paginate(@players)
