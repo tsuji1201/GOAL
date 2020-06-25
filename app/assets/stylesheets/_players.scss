@@ -222,69 +222,87 @@ input {
 }
 
 .photo {
-  width: 400px;
-  height: 600px;
   margin: 30px 0 0 100px;
-}
-
-.details {
-  width: 400px;
-  margin: 30px 0 0 50px;
-  font-size: 24px;
-  height: 180px;
-}
-
-.detail {
-
-  &__nickname {
-
-    &__link {
-      text-decoration: none;
-      color: #222222;
+  height: 650px;
+  &__image{
+    width: 400px;
+    height: 550px;
+  }
+  &__btn{
+    height: 100px;
+    display: flex;
+    &__area {
+      width: 200px;
+      height: 100px;
+      a{
+        width: 60px;
+        font-size: 50px;
+        display: inline-block;
+        text-decoration: none;
+        margin-top: 20px;
+        color: #222;
+      }
+      span {
+        font-size: 20px;
+        margin-left: 15px;
+      }
     }
   }
 }
 
-.btn {
+.details {
+  width: 750px;
+  margin: 30px 0 0 50px;
+  font-size: 18px;
+  height: 280px;
+  background-color: #555;
+  color: white;
+  border: solid 1px #222;
+
+.detail__group {
+  height: 40px;
   display: flex;
-  width: 300px;
-  height: 80px;
-  text-align: center;
-  font-size: 3.0em;
-  line-height: 80px;
-  margin-top: 60px;
-  
-
-  &__edit {
+  &__title {
     width: 150px;
-    height: 80px;
-    color: #222222;
+    text-align: center;
+    line-height: 40px;
+    border: solid 1px #222;
   }
-
-  &__delete {
-    width: 150px;
-    height: 80px;
-    color: #222222;
+  &__content {
+    width: 600px;
+    border: solid 1px #222;
+    line-height: 40px;
+    padding-left: 20px;
+    &__link {
+      text-decoration: none;
+      color: white;
+    }
+    &__favorite{
+      display: inline-block;
+      text-decoration: none;
+      color: red;
+      margin-right: 5px;
+    }
   }
 }
+}
+
 
 .comment {
-  width: 700px;
-  height: 400px;
+  width: 750px;
+  height: 300px;
   position: absolute;
   bottom: 20px;
-  right: 20px;
-  background-image: url("sibahu.jpeg");
-  box-shadow: 3px 3px 6px -2px #555,
-  3px 3px 8px rgba(255,255,255,0.8) inset;
-  background: rgba(255,255,255,0.3);
+  right: 140px;
+  background-color: #555;
+  color: white;
 
   &__form {
-    width: 700px;
+    width: 750px;
     height: 150px;
     
     #new_comment {
-      width: 700px;
+      width: 750px;
       height: 150px;
       text-align: center;
       position: relative;
@@ -304,17 +322,17 @@ input {
   }
 
   &__date {
-    height: 250px;
+    height: 150px;
     overflow: scroll;
 
     &__group {
-      width: 700px;
+      width: 750px;
       height: 30px;
       display: flex;
 
       &__name {
         display: block;
-        width: 100px;
+        width: 150px;
         height: 30px; 
         text-align: center;
         font-weight: bold;       

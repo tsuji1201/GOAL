@@ -6,31 +6,64 @@
   .filter
     .content
       .photo
-        = image_tag "#{@player.image}", height: "600", width: "400"
+        .photo__image
+          = image_tag "#{@player.image}", height: "550", width: "400"
+        .photo__btn
+          - if user_signed_in? && current_user.id == @player.user_id        
+            .photo__btn__area
+              = link_to "/players/#{@player.id}/edit", class: "btn__edit" do
+                = icon('fas', 'fas fa-futbol')      
+              %span.photo__btn__area__text 編集する  
+            .photo__btn__area    
+              = link_to "/players/#{@player.id}", method: :delete, class: "btn__delete" do
+                = icon('fas', 'fas fa-user-times')
+              %span.photo__btn__area__text 削除する  
+        
       .details
-        .dedail__name
-          選手名：
-          = @player.name
-        .detail__country
-          国：
-          = @player.country
-        .detail__position
-          ポジション：
-          = @player.position
-        .detail__age
-          年齢：
-          = @player.age
-        .detail__nickname
-          投稿者：
-          = link_to user_path(@player.user.id), class:"detail__nickname__link" do
-            = @player.user.nickname
-      - if user_signed_in? && current_user.id == @player.user_id        
-        .btn
-          = link_to "/players/#{@player.id}/edit", class: "btn__edit" do
-            = icon('fas', 'fas fa-futbol')
-          = link_to "/players/#{@player.id}", method: :delete, class: "btn__delete" do
-            = icon('fas', 'fas fa-user-times')
-      
+        .detail__group
+          .detail__group__title
+            選手名
+          .detail__group__content  
+            = @player.name
+        .detail__group
+          .detail__group__title
+            国
+          .detail__group__content  
+            = @player.country
+        .detail__group
+          .detail__group__title
+            ポジション
+          .detail__group__content  
+            = @player.position
+        .detail__group
+          .detail__group__title
+            年齢
+          .detail__group__content  
+            = @player.age
+        .detail__group
+          .detail__group__title
+            投稿者
+          .detail__group__content  
+            = link_to user_path(@player.user.id), class:"detail__group__content__link" do
+              = @player.user.nickname
+        .detail__group    
+          .detail__group__title
+            いいねの数
+          .detail__group__content
+            - if user_signed_in?
+              - if current_user.already_favorited?(@player) 
+                = link_to player_favorites_path(@player), method: :delete, class:"detail__group__content__favorite" do
+                  = icon('fas', 'fas fa-heart')
+              - else 
+                = link_to player_favorites_path(@player), method: :post, class:"detail__group__content__favorite" do
+                  = icon('far', 'far fa-heart')
+              = @player.favorites.count
+        .detail__group
+          .detail__group__title
+            投稿者の一言
+          .detail__group__content
+            こいつのドリブルはヤバイ
+
       - if user_signed_in?
         .comment
           .comment__form
