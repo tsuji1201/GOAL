@@ -34,6 +34,7 @@
   line-height: 70px;
   cursor: pointer;
   position: relative;
+  margin-right: 100px;
   &__pull{
     font-size: 14px;
     background-color: #222;
@@ -48,6 +49,10 @@
     &__text:hover {
       opacity: 1.0;
     }  
+  }
+  &__nickname {
+    width: 200px;
+    margin-right: 30px;
   }
 }
 
