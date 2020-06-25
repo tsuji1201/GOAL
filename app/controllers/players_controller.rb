@@ -41,7 +41,7 @@ class PlayersController < ApplicationController
 
   private 
   def player_params
-    params.require(:player).permit(:image, :name, :country, :position, :age).merge(user_id: current_user.id)
+    params.require(:player).permit(:image, :name, :country_id, :position_id, :age_id, :text).merge(user_id: current_user.id)
   end
 
   def set_up

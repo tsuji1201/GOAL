@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(version: 2020_06_24_034512) do
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image"
     t.string "name"
-    t.string "country"
-    t.string "position"
-    t.integer "age"
+    t.string "country_id"
+    t.integer "position_id"
+    t.integer "age_id"
+    t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
