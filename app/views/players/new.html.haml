@@ -15,13 +15,16 @@
             選手名
             = f.text_field :name, class: "form__group__field", placeholder: "選手名"
           .form__group    
-            出身国
-            = f.text_field :country, class: "form__group__field", placeholder: "国"
+            出身国(2020/06/25時点でのFIFAランキング順)
+            = f.collection_select  :country_id, Country.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: "form__group__field", required: ""
           .form__group    
             ポジション
-            = f.text_field :position, class: "form__group__field", placeholder: "ポジション"
+            = f.collection_select  :position_id, Position.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: "form__group__field", required: ""
           .form__group  
             年齢
-            = f.text_field :age, class: "form__group__field", placeholder: "年齢"
+            = f.collection_select :age_id, Age.all, :id, :value, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: "form__group__field", required: ""
+          .form__group  
+            選手に一言！
+            = f.text_field :text, class: "form__group__field", placeholder: "例）こいつのドリブルはヤバイ..." 
           .form__submit
             = f.submit "登録する", class: "form__submit__btn"

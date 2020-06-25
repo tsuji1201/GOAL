@@ -29,17 +29,17 @@
           .detail__group__title
             国
           .detail__group__content  
-            = @player.country
+            = @player.country.name
         .detail__group
           .detail__group__title
             ポジション
           .detail__group__content  
-            = @player.position
+            = @player.position.name
         .detail__group
           .detail__group__title
             年齢
           .detail__group__content  
-            = @player.age
+            = @player.age.value
         .detail__group
           .detail__group__title
             投稿者

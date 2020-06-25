@@ -69,7 +69,7 @@ gem 'kaminari'
 gem 'jquery-rails'  
 gem 'pry-rails'
 gem 'carrierwave'
-# gem 'mini_magick'
+gem 'active_hash'
 
 group :production do
   gem 'pg'
