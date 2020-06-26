@@ -1,24 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## GOAL
 
-Things you may want to cover:
+## 概要
+お気に入りの選手を投稿し、他のユーザーの方と共有することができます。特にお気に入りの選手には、いいねをつけたり、コメントをする事もできます。
 
-* Ruby version
+##　バージョン
+・macOS Catalina 10.15.5
+・Rails 5.2.4.3
+・Ruby 2.5.1
+・Heroku
 
-* System dependencies
+## デプロイ情報
+・Heroku URL
 
-* Configuration
+  https://shielded-headland-71945.herokuapp.com/
 
-* Database creation
+・テストアカウント
+　
+　メールアドレス：test@test
+　パスワード：111111
 
-* Database initialization
+## 機能
+# ユーザー
+　・ユーザー新規登録、ログイン、ログアウト
+　・マイページに自分の投稿した一覧表示
 
-* How to run the test suite
+# プレイヤー
+　・新規投稿、編集、削除
+　・選手名の曖昧検索
+　・投稿者のリンクからマイページへ遷移可能
+　・非同期通信によるコメント機能
+　・ホーム画面もしくは詳細画面から選手にいいね機能を付加
 
-* Services (job queues, cache servers, search engines, etc.)
+## 今後実装したい事
+　・gem(OmniAuth)を用いたSNSのAPIを用いたユーザーが新規投稿などのサービスの利用
+　・選手名以外での検索機能
+　・より選手について語り合えるチャット機能
 
-* Deployment instructions
+## DB設計
 
-* ...
+　　

@@ -62,7 +62,7 @@
           .detail__group__title
             投稿者の一言
           .detail__group__content
-            こいつのドリブルはヤバイ
+            = @player.text
 
       - if user_signed_in?
         .comment
