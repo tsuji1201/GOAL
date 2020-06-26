@@ -2,6 +2,7 @@
 
 ## 概要
 お気に入りの選手を投稿し、他のユーザーの方と共有することができます。特にお気に入りの選手には、いいねをつけたり、コメントをする事もできます。
+[![Image from Gyazo](https://i.gyazo.com/9ea7f1934f4463d7c9bc536033518c4b.jpg)](https://gyazo.com/9ea7f1934f4463d7c9bc536033518c4b)
 
 ## バージョン
 - macOS Catalina 10.15.5
