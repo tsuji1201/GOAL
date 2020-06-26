@@ -2,6 +2,7 @@
 
 ## 概要
 お気に入りの選手を投稿し、他のユーザーの方と共有することができます。特にお気に入りの選手には、いいねをつけたり、コメントをする事もできます。
+
 [![Image from Gyazo](https://i.gyazo.com/9ea7f1934f4463d7c9bc536033518c4b.jpg)](https://gyazo.com/9ea7f1934f4463d7c9bc536033518c4b)
 
 ## バージョン
@@ -37,5 +38,54 @@
 - より選手について語り合えるチャット機能
 
 ## DB設計
+
+### usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+
+#### Association
+- has_many :players
+- has_many :comments       
+- has_many :favorites 
+
+### playersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|text|null: false|
+|name|string|null: false|
+|country_id|integer|null: false, foreign_key: true|
+|position_id|integer|null: false, foreign_key: true|
+|age_id|integer|null: false, foreign_key: true|
+|text|string||
+
+#### Association
+- belongs_to :user
+- has_many :favorites
+- has_many :comments 
+
+### commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|player_id|integer|null: false, foreign_key: true|
+
+#### Association
+- belongs_to :user
+- belongs_to :player
+
+### favoritesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|player_id|integer|null: false, foreign_key: true|
+
+#### Association
+- belongs_to :user
+- belongs_to :player
+
 
 　　
