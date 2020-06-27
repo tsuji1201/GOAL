@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :comments       
   has_many :favorites, dependent: :destroy
 
+  validates :name, presence: true, uniqueness: true, length: { maximum: 8 }
+
   def already_favorited?(player)
     self.favorites.exists?(player_id: player.id)
   end

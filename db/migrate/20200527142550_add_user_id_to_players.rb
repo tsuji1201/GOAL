@@ -1,5 +1,5 @@
 class AddUserIdToPlayers < ActiveRecord::Migration[5.2]
   def change
-    add_column :players, :user_id, :integer
+    add_column :players, :user_id, :integer ,foreign_key: true
   end
 end

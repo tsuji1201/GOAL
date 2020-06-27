@@ -60,6 +60,7 @@
 |position_id|integer|null: false, foreign_key: true|
 |age_id|integer|null: false, foreign_key: true|
 |text|string||
+|user_id|integer|null: false, foreign_key: true|
 
 #### Association
 - belongs_to :user

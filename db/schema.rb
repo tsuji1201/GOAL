@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 2020_06_24_034512) do
   end
 
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "image"
-    t.string "name"
-    t.string "country_id"
-    t.integer "position_id"
-    t.integer "age_id"
+    t.text "image", null: false
+    t.string "name", null: false
+    t.string "country_id", null: false
+    t.integer "position_id", null: false
+    t.integer "age_id", null: false
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_06_24_034512) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -47,7 +48,6 @@ ActiveRecord::Schema.define(version: 2020_06_24_034512) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
