@@ -4,12 +4,27 @@
 
 .contents
   .filter
-    .form 
-      = form_for [@player] do |f|
-        = f.text_field :image, class: "form__image", placeholder: "画像のurl"
-        = f.text_field :name, class: "form__name", placeholder: "選手名"
-        = f.text_field :country, class: "form__country", placeholder: "国"
-        = f.text_field :position, class: "form__position", placeholder: "ポジション"
-        = f.text_field :age, class: "form__age", placeholder: "年齢"
-        = f.submit "編集する", class: "form__btn"
-　　　　　　
+    .wrapper
+      .form 
+        %h2.form__title 編集できるよ
+        = form_for [@player] do |f|
+          .form__group 
+            画像の選択
+            = f.file_field :image, class: "form__group__field", placeholder: "画像のurl"
+          .form__group  
+            選手名
+            = f.text_field :name, class: "form__group__field", placeholder: "選手名"
+          .form__group    
+            出身国(2020/06/25時点でのFIFAランキング順)
+            = f.collection_select  :country_id, Country.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: "form__group__field", required: ""
+          .form__group    
+            ポジション
+            = f.collection_select  :position_id, Position.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: "form__group__field", required: ""
+          .form__group  
+            年齢
+            = f.collection_select :age_id, Age.all, :id, :value, {include_blank: "選択して下さい", selected: "選択して下さい"}, class: "form__group__field", required: ""
+          .form__group  
+            選手に一言！
+            = f.text_field :text, class: "form__group__field", placeholder: "例）こいつのドリブルはヤバイ..." 
+          .form__submit
+            = f.submit "登録する", class: "form__submit__btn"

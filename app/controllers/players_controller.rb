@@ -13,12 +13,13 @@ class PlayersController < ApplicationController
 
   def create
     Player.create(player_params)
-    redirect_to root_path
+    redirect_to root_path, alert: "選手を登録しました"
   end
 
   def destroy
     player = Player.find(params[:id])
     player.destroy
+    redirect_to root_path, alert: "選手を削除しました"
   end
 
   def show
@@ -33,6 +34,7 @@ class PlayersController < ApplicationController
   def update
     player = Player.find(params[:id])
     player.update(player_params)
+    redirect_to root_path, alert: "選手を編集しました"
   end
 
   def search

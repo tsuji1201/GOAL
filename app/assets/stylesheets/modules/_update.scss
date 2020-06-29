@@ -1,0 +1,19 @@
+.update__text {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.back {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+
+  &__btn{
+    color: #222;
+  }
+  &__mypage{
+    color: #222;
+  }
+}
