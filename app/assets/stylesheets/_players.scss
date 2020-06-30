@@ -413,6 +413,45 @@ input {
   }
 }
 
+.footer {
+  height: 150px;
+  width: 100%;
+  background-color: #222;
+
+  &__container {
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  &__links {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    color: #fff;
+  }
+  &__logo {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 100px;
+    &__text {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 30px;
+      font-family: 'arial black';
+    }
+    &__copy {
+      color: #ddd;
+      font-size: 10px;
+      text-align: center;
+    }
+  }
+}
+
+
+
 
 
 
